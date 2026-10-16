@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Documento ejecutivo 2026: Revitalización de la Cadena Panelera de Nocaima — automatización, comercialización directa, trazabilidad digital, protección social rural y marketing estratégico.">
+<meta property="og:title" content="Revitalización de la Cadena Panelera de Nocaima — Documento Ejecutivo 2026">
+<meta property="og:description" content="Automatización · Comercialización Directa · Trazabilidad Digital · Protección Social Rural · Marketing Estratégico">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1a4d2e">
+<title>Revitalización de la Cadena Panelera de Nocaima - Documento Ejecutivo 2026</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    @page {
+        size: A4;
+        margin: 2cm 2.2cm;
+        @bottom-center {
+            content: "Página " counter(page) " de " counter(pages);
+            font-size: 9pt;
+            color: #555;
+        }
+        @top-right {
+            content: "Xlerion Consultoría y Proyectos";
+            font-size: 8pt;
+            color: #888;
+            font-style: italic;
+        }
+    }
+    
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 11pt;
+        line-height: 1.6;
+        color: #2c2c2c;
+        background: #fff;
+    }
+    
+    /* PORTADA */
+    .portada {
+        page-break-after: always;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4f 50%, #4a9d6e 100%);
+        color: white;
+        padding: 2cm;
+        position: relative;
+    }
+    
+    .portada::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 10 Q60 30 50 50 Q40 30 50 10 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+        opacity: 0.3;
+    }
+    
+    .portada-content { position: relative; z-index: 2; }
+    
+    .portada h1 {
+        font-size: 30pt;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        letter-spacing: 1px;
+    }
+    
+    .portada h2 {
+        font-size: 15pt;
+        font-weight: normal;
+        margin-bottom: 40px;
+        font-style: italic;
+        opacity: 0.95;
+    }
+    
+    .portada .subtitulo {
+        font-size: 12pt;
+        margin-top: 30px;
+        padding: 15px 30px;
+        border-top: 2px solid rgba(255,255,255,0.5);
+        border-bottom: 2px solid rgba(255,255,255,0.5);
+        display: inline-block;
+    }
+    
+    .portada .info {
+        margin-top: 60px;
+        font-size: 11pt;
+        line-height: 1.8;
+    }
+    
+    /* Badge retirado: documento público en GitHub */
+    
+    /* CONTENIDO PRINCIPAL */
+    .contenido { padding: 0; }
+    
+    h1 {
+        color: #1a4d2e;
+        font-size: 20pt;
+        border-bottom: 3px solid #4a9d6e;
+        padding-bottom: 8px;
+        margin: 30px 0 20px 0;
+        page-break-after: avoid;
+    }
+    
+    h2 {
+        color: #2d7a4f;
+        font-size: 15pt;
+        margin: 25px 0 15px 0;
+        border-left: 5px solid #4a9d6e;
+        padding-left: 12px;
+        page-break-after: avoid;
+    }
+    
+    h3 {
+        color: #3d8b5f;
+        font-size: 13pt;
+        margin: 18px 0 10px 0;
+        page-break-after: avoid;
+    }
+    
+    h4 {
+        color: #4a9d6e;
+        font-size: 11.5pt;
+        margin: 12px 0 8px 0;
+        font-style: italic;
+    }
+    
+    p { margin-bottom: 10px; text-align: justify; }
+    strong { color: #1a4d2e; }
+    
+    /* TABLAS */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 10pt;
+        page-break-inside: avoid;
+    }
+    
+    thead { background: #1a4d2e; color: white; }
+    
+    th {
+        padding: 10px 8px;
+        text-align: left;
+        font-weight: bold;
+        border: 1px solid #1a4d2e;
+    }
+    
+    td {
+        padding: 8px;
+        border: 1px solid #d0d0d0;
+        vertical-align: top;
+    }
+    
+    tbody tr:nth-child(even) { background: #f5f9f6; }
+    
+    /* CAJAS DESTACADAS */
+    .caja-alerta {
+        background: #fff4e6;
+        border-left: 5px solid #ff8c00;
+        padding: 15px 18px;
+        margin: 18px 0;
+        border-radius: 4px;
+        page-break-inside: avoid;
+    }
+    
+    .caja-alerta strong { color: #c75000; }
+    
+    .caja-info {
+        background: #e8f4f8;
+        border-left: 5px solid #2980b9;
+        padding: 15px 18px;
+        margin: 18px 0;
+        border-radius: 4px;
+    }
+    
+    .caja-exito {
+        background: #e8f5e9;
+        border-left: 5px solid #27ae60;
+        padding: 15px 18px;
+        margin: 18px 0;
+        border-radius: 4px;
+    }
+    
+    .caja-critico {
+        background: #fdecea;
+        border-left: 5px solid #c0392b;
+        padding: 15px 18px;
+        margin: 18px 0;
+        border-radius: 4px;
+    }
+    
+    .caja-critico strong { color: #c0392b; }
+    
+    ul, ol { margin: 10px 0 10px 25px; }
+    li { margin-bottom: 5px; }
+    
+    .page-break { page-break-before: always; }
+    
+    hr {
+        border: none;
+        border-top: 2px solid #4a9d6e;
+        margin: 25px 0;
+    }
+    
+    /* TABLA DE CONTENIDO */
+    .toc { page-break-after: always; }
+    
+    .toc h1 { text-align: center; border: none; }
+    
+    .toc ul { list-style: none; margin: 20px 0; padding: 0; }
+    
+    .toc li {
+        padding: 8px 0;
+        border-bottom: 1px dotted #ccc;
+        font-size: 11pt;
+    }
+    
+    .toc ul ul { margin-left: 25px; margin-top: 5px; }
+    
+    .toc ul ul li { font-size: 10pt; border-bottom: 1px dotted #e0e0e0; }
+    
+    /* FIRMAS */
+    .firma {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 2px solid #1a4d2e;
+        font-size: 10pt;
+    }
+    
+    .firma-box { display: inline-block; margin-top: 30px; min-width: 300px; }
+    .firma-der { float: right; }
+    
+    .firma-line {
+        border-top: 1px solid #333;
+        padding-top: 5px;
+        margin-top: 60px;
+    }
+    
+    /* BADGES */
+    .badge {
+        display: inline-block;
+        background: #1a4d2e;
+        color: white;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 9pt;
+        margin-right: 5px;
+        font-weight: bold;
+    }
+    
+    .badge-danger { background: #c0392b; }
+    .badge-info { background: #2980b9; }
+    
+    blockquote {
+        border-left: 4px solid #4a9d6e;
+        padding: 10px 15px;
+        margin: 15px 0;
+        background: #f9f9f9;
+        font-style: italic;
+        color: #555;
+    }
+    
+    /* KPI */
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+    .kpi-item {
+        background: #f5f9f6;
+        border: 1px solid #4a9d6e;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    
+    .kpi-item strong {
+        display: block;
+        font-size: 18pt;
+        color: #1a4d2e;
+        margin-bottom: 5px;
+    }
+    
+    /* BOTÓN DESCARGA */
+    .no-print {
+        text-align: center;
+        margin: 20px;
+        padding: 15px;
+        background: #f0f0f0;
+    }
+    
+    .btn-descargar {
+        background: #1a4d2e;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 12pt;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .btn-descargar:hover { background: #2d7a4f; }
+    
+    /* RESPONSIVE (GitHub Pages / móvil) */
+    @media (max-width: 700px) {
+        body { font-size: 10.5pt; }
+        .portada { padding: 1.2cm 0.8cm; height: auto; min-height: 100vh; }
+        .portada h1 { font-size: 22pt; }
+        .portada h2 { font-size: 12pt; }
+        .kpi-grid { grid-template-columns: 1fr; }
+        table { font-size: 9pt; display: block; overflow-x: auto; }
+        .firma-box { display: block; min-width: 0; }
+        .firma-der { float: none; }
+    }
+
+    @media print {
+        .no-print { display: none; }
+        body { background: white; }
+        .portada { height: auto; min-height: 100vh; }
+    }
+</style>
+</head>
+<body>
+
+<!-- BOTÓN DE DESCARGA -->
+<div class="no-print">
+    <button class="btn-descargar" onclick="window.print()">📄 Descargar como PDF (Ctrl+P)</button>
+    <p style="margin-top:10px; font-size:10pt; color:#666;">
+        En el diálogo de impresión, seleccione <strong>"Guardar como PDF"</strong> como destino.
+    </p>
+</div>
+
+<!-- PORTADA -->
+<section class="portada">
+    <div class="portada-content">
+        <h1>REVITALIZACIÓN DE LA CADENA PANELERA DE NOCAIMA</h1>
+        <h2>Documento Ejecutivo Reestructurado 2026</h2>
+        <div class="subtitulo">
+            Automatización · Comercialización Directa · Trazabilidad Digital<br>
+            Protección Social Rural · Marketing Estratégico
+        </div>
+        <div class="info">
+            <strong>Elaborado para:</strong><br>
+            Secretaría de Desarrollo del Municipio de Nocaima, Cundinamarca<br><br>
+            <strong>Fecha de emisión:</strong> Viernes, 16 de octubre de 2026<br>
+            <strong>Versión:</strong> 2.0 Reestructurada<br>
+            <strong>Acceso:</strong> Documento público
+        </div>
+    </div>
+</section>
+
+<!-- TABLA DE CONTENIDO -->
+<section class="toc">
+    <h1>ÍNDICE DE CONTENIDO</h1>
+    <ul>
+        <li><strong>1. Análisis de Contexto 2026 (Línea Base)</strong></li>
+        <li>1.1. Coyuntura Macroeconómica</li>
+        <li>1.2. Realidad del Mercado Panelero</li>
+        <li>1.3. Marco Normativo Crítico Vigente</li>
+        <li><strong>2. Reestructuración de los 5 Pilares</strong></li>
+        <li>2.1. Pilar 1: Automatización del Trapiche</li>
+        <li>2.2. Pilar 2: Comercialización Directa</li>
+        <li>2.3. Pilar 3: Trazabilidad Digital</li>
+        <li>2.4. Pilar 4: Protección Social Rural</li>
+        <li>2.5. Pilar 5: Marketing Ético-Legal</li>
+        <li><strong>3. Estructura Jurídica Propuesta</strong></li>
+        <li><strong>4. Gobernanza y Cumplimiento Ambiental</strong></li>
+        <li><strong>5. Hoja de Ruta Reestructurada (24 Meses)</strong></li>
+        <li><strong>6. Presupuesto Reestructurado</strong></li>
+        <li><strong>7. Indicadores de Éxito (KPIs)</strong></li>
+        <li><strong>8. Riesgos y Mitigación</strong></li>
+        <li><strong>9. Conclusión Ejecutiva</strong></li>
+    </ul>
+</section>
+
+<!-- CONTENIDO PRINCIPAL -->
+<section class="contenido">
+
+<h1>1. ANÁLISIS DE CONTEXTO 2026 (Línea Base)</h1>
+
+<h2>1.1. Coyuntura Macroeconómica</h2>
+<ul>
+    <li><strong>Tasa de Interés de Política Monetaria:</strong> 12,25% (octubre 2026, Banco de la República). Esto encarece el crédito agropecuario y obliga a priorizar recursos no reembolsables.</li>
+    <li><strong>Inflación proyectada:</strong> 5,0% anual cierre 2026.</li>
+    <li><strong>Crecimiento PIB:</strong> 2,6% para 2026, desaceleración que limita la expansión del mercado gourmet.</li>
+</ul>
+
+<h2>1.2. Realidad del Mercado Panelero</h2>
+<ul>
+    <li><strong>Precio al productor (octubre 2026):</strong> Entre $3.300 y $4.200 COP/kg, con denuncias de pérdidas dado que el costo de producción ronda los $4.200.</li>
+    <li><strong>Precio mayorista Bogotá:</strong> $4.436 COP/kg (panela cuadrada, octubre 2026).</li>
+    <li><strong>Precio consumidor final Bogotá:</strong> $7.000 - $9.000 COP/kg.</li>
+</ul>
+
+<div class="caja-critico">
+    <strong>⚠️ DIAGNÓSTICO CRÍTICO:</strong> El supuesto original de pagar $6.500/kg al productor es <strong>irreal en mercado mayorista tradicional</strong>; solo es viable mediante venta directa al consumidor final con marca propia y valor agregado.
+</div>
+
+<h2>1.3. Marco Normativo Crítico Vigente</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:20%">Ámbito</th>
+            <th style="width:30%">Norma</th>
+            <th>Impacto en el Proyecto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Reforma Pensional</strong></td>
+            <td>Ley 2381 de 2024 - SUSPENDIDA por Corte Constitucional (Sentencia C-264 de junio 2025)</td>
+            <td>Imposible estructurar el fondo bajo el nuevo Sistema de Protección Social Integral. Debe usarse el marco actual (Colpensiones + BEPS + Colombia Mayor).</td>
+        </tr>
+        <tr>
+            <td><strong>Colombia Mayor 2026</strong></td>
+            <td>Prosperidad Social</td>
+            <td>$225.000-$230.000/mes. Edad: 65 años hombres, 60 años mujeres. Complemento real, no sustituto de pensión.</td>
+        </tr>
+        <tr>
+            <td><strong>BEPS</strong></td>
+            <td>Colpensiones</td>
+            <td>Anualidad vitalicia desde los 57 años (mujeres) y 62 (hombres). Vehículo natural para el ahorro campesino.</td>
+        </tr>
+        <tr>
+            <td><strong>Cooperativas</strong></td>
+            <td>Ley 79/1988, Ley 454/1998, Circular 94 de 2025 (Supersolidaria)</td>
+            <td>Exige nuevo Código de Buen Gobierno obligatorio desde marzo 2026.</td>
+        </tr>
+        <tr>
+            <td><strong>Régimen Tributario</strong></td>
+            <td>Art. 19-4 Estatuto Tributario (Ley 1819/2016)</td>
+            <td>Cooperativas tributan al 20% sobre excedentes, no sobre ingresos. Requisito: mantenerse en RTE ante DIAN.</td>
+        </tr>
+        <tr>
+            <td><strong>INVIMA</strong></td>
+            <td>Resolución 4217 de 2013 y modificaciones</td>
+            <td><strong>Panela natural NO requiere notificación sanitaria</strong>. Panela saborizada SÍ la requiere.</td>
+        </tr>
+        <tr>
+            <td><strong>ICR 2026</strong></td>
+            <td>Circular 27 de 2026 FINAGRO</td>
+            <td>Hasta 40% de abono al crédito para pequeños productores de ingresos bajos.</td>
+        </tr>
+        <tr>
+            <td><strong>Código CIIU</strong></td>
+            <td>1072 - Elaboración de panela</td>
+            <td>Clasificación obligatoria para RUT y facturación electrónica.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 class="page-break">2. REESTRUCTURACIÓN DE LOS 5 PILARES</h1>
+
+<h2>2.1. PILAR 1: AUTOMATIZACIÓN DEL TRAPICHE</h2>
+
+<div class="caja-info">
+    <strong>Problema original:</strong> Cotizaciones genéricas sin considerar aranceles, fletes internacionales y soporte técnico en Colombia.<br>
+    <strong>Solución 2026:</strong> Proveedores priorizados con soporte local y financiación en cascada.
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Proceso</th>
+            <th>Tecnología Ajustada</th>
+            <th>Proveedor Prioritario</th>
+            <th>Costo Estimado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Corte</strong></td>
+            <td>Corta-caña de disco motorizado (gasolina)</td>
+            <td>Nacional (Imeca, John Deere Colombia)</td>
+            <td>$12.000.000</td>
+        </tr>
+        <tr>
+            <td><strong>Alce</strong></td>
+            <td>Cable vía + malacates hidráulicos</td>
+            <td>Fabricación local (talleres Cundinamarca)</td>
+            <td>$25.000.000</td>
+        </tr>
+        <tr>
+            <td><strong>Molienda</strong></td>
+            <td>Trapiche 4 mazas, motor eléctrico WEG 30HP</td>
+            <td>Guangxi Nanning (vía CIDCA) con soporte Penagos</td>
+            <td>$85.000.000</td>
+        </tr>
+        <tr>
+            <td><strong>Evaporación</strong></td>
+            <td>Hornilla CIMPA mejorada + tiro forzado + paletas mecánicas</td>
+            <td>Nacional (CIMPA Bucaramanga)</td>
+            <td>$45.000.000</td>
+        </tr>
+        <tr>
+            <td><strong>Punteo</strong></td>
+            <td>Termopar tipo K + PLC Siemens Logo!</td>
+            <td>Nacional (Siemens Colombia)</td>
+            <td>$8.500.000</td>
+        </tr>
+        <tr>
+            <td><strong>Batido</strong></td>
+            <td>Batidora mecánica acero inox 304</td>
+            <td>Nacional (Metalcúcuta o similar)</td>
+            <td>$22.000.000</td>
+        </tr>
+        <tr>
+            <td><strong>Empaque</strong></td>
+            <td>Termoselladora al vacío 2 cabezales</td>
+            <td>Importada (vía Alibaba/CIDCA)</td>
+            <td>$18.000.000</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr style="background:#1a4d2e; color:white; font-weight:bold;">
+            <td colspan="3">INVERSIÓN TOTAL MAQUINARIA (IVA incluido, puesto en Nocaima)</td>
+            <td>$215.500.000</td>
+        </tr>
+    </tfoot>
+</table>
+
+<h3>Fuente de financiación escalonada</h3>
+<ol>
+    <li><strong>ICR FINAGRO 2026:</strong> 40% = $86.200.000 (abono directo al crédito).</li>
+    <li><strong>Alianzas Productivas MinAgricultura:</strong> 30% = $64.650.000 (convocatoria anual).</li>
+    <li><strong>Aporte Alcaldía (Regalías/SGR):</strong> 20% = $43.100.000.</li>
+    <li><strong>Aporte Cooperativa:</strong> 10% = $21.550.000 (especies + mano de obra).</li>
+</ol>
+
+<h2>2.2. PILAR 2: COMERCIALIZACIÓN DIRECTA</h2>
+
+<div class="caja-alerta">
+    <strong>Precio realista al productor asociado:</strong> $5.800 COP/kg (no $6.500, ajustado al mercado 2026).
+</div>
+
+<h3>Líneas de Producto (marca "Nocaima Dulce Origen")</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Línea</th>
+            <th>Presentación</th>
+            <th>Precio Público</th>
+            <th>Margen Bruto Cooperativa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tradicional</td>
+            <td>Bloque 500g eco-empaque</td>
+            <td>$4.500</td>
+            <td>28%</td>
+        </tr>
+        <tr>
+            <td>Gourmet</td>
+            <td>Panela granulada 300g</td>
+            <td>$12.000</td>
+            <td>45%</td>
+        </tr>
+        <tr>
+            <td>Saborizada</td>
+            <td>Caja 4 unidades 125g</td>
+            <td>$14.500</td>
+            <td>52% (requiere registro INVIMA)</td>
+        </tr>
+        <tr>
+            <td>Miel Virgen</td>
+            <td>Frasco 350ml</td>
+            <td>$13.500</td>
+            <td>48%</td>
+        </tr>
+        <tr>
+            <td>Suscripción Mensual</td>
+            <td>Box mixto</td>
+            <td>$35.000</td>
+            <td>42%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Margen promedio ponderado:</strong> 38% sobre costo de producción.<br>
+<strong>Ingresos netos por hectárea proyectados:</strong> De $2.500.000 a $5.800.000 COP/año (duplicar x2.3, no triplicar).</p>
+
+<h2>2.3. PILAR 3: TRAZABILIDAD DIGITAL</h2>
+
+<div class="caja-alerta">
+    <strong>Problema original:</strong> Implementar blockchain desde el mes 1 es <strong>prohibitivamente costoso</strong> (&gt;$80 millones en desarrollo y gas fees).
+</div>
+
+<h3>Solución Full-Stack (Expertise técnico Xlerion)</h3>
+
+<h4>Fase 1 (Meses 1-12): Sistema centralizado de bajo costo</h4>
+<ul>
+    <li><strong>Backend:</strong> Python + FastAPI + PostgreSQL (hosting en AWS Lightsail $20/mes).</li>
+    <li><strong>Frontend:</strong> Next.js + React + QR dinámicos.</li>
+    <li><strong>Base de datos:</strong> 5 tablas relacionadas (Productor, Suerte, Lote, Calidad, Proceso).</li>
+    <li><strong>Costo total año 1:</strong> $6.500.000 (desarrollo + hosting + mantenimiento).</li>
+</ul>
+
+<h4>Fase 2 (Año 2+): Migración a Polygon PoS</h4>
+<ul>
+    <li>Contratos inteligentes en Solidity para certificación de origen.</li>
+    <li>Cumplimiento del Reglamento UE 2023/1115 (Deforestación).</li>
+    <li>Costo migración: $35.000.000 (financiable con cooperación internacional).</li>
+</ul>
+
+<h2 class="page-break">2.4. PILAR 4: PROTECCIÓN SOCIAL RURAL</h2>
+
+<div class="caja-critico">
+    <strong>⚠️ CRÍTICO:</strong> El fideicomiso tal como se planteó en el documento original <strong>NO ES VIABLE JURÍDICAMENTE EN 2026</strong> por las siguientes razones:
+    <ol style="margin-top:10px;">
+        <li>La Ley 2381 de 2024 (reforma pensional) fue suspendida por la Corte Constitucional.</li>
+        <li>Los fondos de pensiones voluntarios están regulados estrictamente por la Superfinanciera y exigen patrimonio mínimo de $15.000 millones.</li>
+        <li>Una fiduciaria cobra entre 1.5% y 2.5% anual sobre AUM, lo cual erosiona los ahorros campesinos pequeños.</li>
+        <li>El descuento automático del 5-8% sobre ventas puede interpretarse como aportes obligatorios a un fondo no autorizado.</li>
+    </ol>
+</div>
+
+<h3>NUEVA ESTRUCTURA: Modelo "Triple Protección Rural"</h3>
+
+<h4>Capa 1 - BEPS (Beneficios Económicos Periódicos) - Obligatorio</h4>
+<ul>
+    <li>Cada productor se inscribe en BEPS (Colpensiones).</li>
+    <li>La cooperativa transfiere el <strong>4% del valor de cada venta</strong> directamente a la cuenta BEPS individual del productor.</li>
+    <li><strong>Ventaja:</strong> El Estado aporta un <strong>subsidio del 20% sobre los ahorros</strong> (hasta 1 SMMLV/año).</li>
+    <li>Edad de retiro: 57 mujeres / 62 hombres.</li>
+    <li>Marco legal: Decreto 604 de 2013, plenamente vigente.</li>
+</ul>
+
+<h4>Capa 2 - Fondo de Solidaridad Cooperativo - Opcional</h4>
+<ul>
+    <li>Se crea al amparo del <strong>Fondo de Educación y Solidaridad</strong> (Ley 79/1988, Art. 56).</li>
+    <li>Aporte adicional del 2% sobre ventas.</li>
+    <li>Administrado directamente por la cooperativa, vigilado por Supersolidaria.</li>
+    <li>Inversión en CDTs y TES (bajo riesgo, rentabilidad esperada 9-11% EA en 2026).</li>
+    <li>Permite retiros parciales por emergencias médicas o calamidades domésticas.</li>
+</ul>
+
+<h4>Capa 3 - Colombia Mayor - Estatal</h4>
+<ul>
+    <li>Gestión activa para que todos los productores mayores de 65 años (hombres) y 60 (mujeres) estén inscritos.</li>
+    <li>Monto 2026: $225.000-$230.000 mensuales.</li>
+    <li>No requiere aportes del productor.</li>
+</ul>
+
+<h3>Simulación realista 2026 (Productor promedio, 3 hectáreas)</h3>
+<table>
+    <tbody>
+        <tr>
+            <td>Ventas anuales al trapiche</td>
+            <td>12.000 kg × $5.800 = <strong>$69.600.000</strong></td>
+        </tr>
+        <tr>
+            <td>Aporte BEPS (4%)</td>
+            <td>$2.784.000/año + subsidio estatal 20% = <strong>$3.340.800/año</strong></td>
+        </tr>
+        <tr>
+            <td>Aporte Fondo Solidaridad (2%)</td>
+            <td>$1.392.000/año</td>
+        </tr>
+        <tr>
+            <td>Proyección 15 años BEPS (rentabilidad 9% anual)</td>
+            <td><strong>$98.500.000 acumulados</strong></td>
+        </tr>
+        <tr>
+            <td>Mesada vitalicia BEPS (desde los 62 años)</td>
+            <td>~$680.000/mes por 15 años</td>
+        </tr>
+        <tr>
+            <td>Complemento Colombia Mayor</td>
+            <td>+$230.000/mes</td>
+        </tr>
+        <tr style="background:#e8f5e9; font-weight:bold;">
+            <td>TOTAL PENSIÓN RURAL</td>
+            <td>$910.000/mes (75% del SMMLV 2026 proyectado)</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="caja-exito">
+    <strong>✓ ESTO SÍ ES VIABLE</strong> y está 100% dentro del marco legal colombiano.
+</div>
+
+<h2>2.5. PILAR 5: MARKETING ÉTICO-LEGAL</h2>
+
+<div class="caja-alerta">
+    <strong>Problema original:</strong> Mensajes como "Endulzante natural" pueden violar la <strong>Resolución 2492 de 2022</strong> (etiquetado frontal) y la Ley 2120 de 2021 (entornos escolares saludables).
+</div>
+
+<h3>Mensajes ajustados 2026 (cumpliendo INVIMA y SIC)</h3>
+
+<p><span class="badge badge-info">✓ PERMITIDO</span> "Panela 100% colombiana, elaborada sin blanqueadores químicos. Proceso automatizado que garantiza inocuidad."</p>
+
+<p><span class="badge badge-info">✓ PERMITIDO</span> "Contiene minerales naturales de la caña como potasio y magnesio." (con tabla nutricional avalada por laboratorio acreditado ONAC).</p>
+
+<p><span class="badge badge-danger">✗ PROHIBIDO</span> "Endulzante saludable" o "Superalimento" (la OMS clasifica la panela como azúcar libre).</p>
+
+<p><span class="badge badge-info">✓ DIFERENCIADOR CLAVE</span> "Primer trapiche de Cundinamarca con trazabilidad QR verificable. Conoce al productor detrás de cada bloque."</p>
+
+<h1 class="page-break">3. ESTRUCTURA JURÍDICA PROPUESTA</h1>
+
+<h2>3.1. Tipo de Entidad</h2>
+<p><strong>Cooperativa Multiactiva de Productores Paneleros de Nocaima</strong> (NO cooperativa de ahorro y crédito, para evitar regulación financiera estricta).</p>
+
+<h2>3.2. Objeto Social (Artículo 5, Ley 79/1988)</h2>
+<ol>
+    <li>Transformación, comercialización y distribución de panela y derivados de la caña.</li>
+    <li>Adquisición colectiva de insumos y maquinaria.</li>
+    <li>Prestación de servicios de asistencia técnica.</li>
+    <li>Creación y administración de fondos de solidaridad y previsión (Art. 56).</li>
+    <li>Desarrollo de actividades de agroturismo.</li>
+</ol>
+
+<h2>3.3. Cumplimiento Circular 94 de 2025 (Supersolidaria)</h2>
+<ul>
+    <li>Adopción del <strong>Código de Buen Gobierno Cooperativo</strong> obligatorio desde 2026.</li>
+    <li>Conformación de Comité de Riesgos y Comité de Vigilancia con miembros independientes.</li>
+    <li>Publicación trimestral de estados financieros en lenguaje ciudadano.</li>
+</ul>
+
+<h2>3.4. Registro y Formalización</h2>
+<ul>
+    <li><strong>Código CIIU principal:</strong> 1072 - Elaboración de panela.</li>
+    <li><strong>Códigos secundarios:</strong> 0113 (cultivo caña), 4634 (comercio al por mayor de bebidas).</li>
+    <li><strong>RUT ante DIAN:</strong> Obligatorio con facturación electrónica.</li>
+    <li><strong>Registro Mercantil:</strong> Cámara de Comercio de Facatativá (jurisdicción Nocaima).</li>
+    <li><strong>INVIMA:</strong> Solo para línea saborizada (Res. 4217/2013 modificada).</li>
+</ul>
+
+<h1>4. GOBERNANZA Y CUMPLIMIENTO AMBIENTAL</h1>
+
+<h2>4.1. CAR Cundinamarca</h2>
+<ul>
+    <li><strong>Permiso de vertimientos:</strong> Obligatorio para aguas residuales del trapiche (vinazas).</li>
+    <li><strong>Plan de Manejo Ambiental de Residuos (PMAR):</strong> El bagazo se reutiliza 100% como combustible de la hornilla (economía circular). Excedentes para compostaje.</li>
+    <li><strong>Permiso de emisiones atmosféricas:</strong> Para la chimenea de la hornilla (material particulado).</li>
+</ul>
+
+<h2>4.2. Licencia de Funcionamiento Municipal</h2>
+<ul>
+    <li>Uso de suelos compatible con actividad agroindustrial (POT Nocaima).</li>
+    <li>Certificado de bomberos (sistemas contra incendios para trapiche).</li>
+</ul>
+
+<h1 class="page-break">5. HOJA DE RUTA REESTRUCTURADA (24 MESES)</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fase</th>
+            <th>Meses</th>
+            <th>Hito Crítico</th>
+            <th>Entidad Responsable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Constitución</strong></td>
+            <td>1-4</td>
+            <td>Registro Cámara de Comercio + RUT + CIIU 1072</td>
+            <td>Cooperativa + Xlerion</td>
+        </tr>
+        <tr>
+            <td><strong>Alineación POAI</strong></td>
+            <td>2-3</td>
+            <td>Inclusión en POAI 2027 y Metas de Producto</td>
+            <td>Alcaldía Nocaima</td>
+        </tr>
+        <tr>
+            <td><strong>Inscripción BEPS</strong></td>
+            <td>4-5</td>
+            <td>Afiliación masiva de productores</td>
+            <td>Colpensiones + Cooperativa</td>
+        </tr>
+        <tr>
+            <td><strong>Convocatoria Alianzas Productivas</strong></td>
+            <td>5-8</td>
+            <td>Postulación formal (apertura anual MinAgricultura)</td>
+            <td>Cooperativa + MinAgricultura</td>
+        </tr>
+        <tr>
+            <td><strong>ICR + Crédito Bancagrario</strong></td>
+            <td>8-10</td>
+            <td>Desembolso para maquinaria</td>
+            <td>FINAGRO + Banco Agrario</td>
+        </tr>
+        <tr>
+            <td><strong>Instalación Trapiche</strong></td>
+            <td>12-18</td>
+            <td>Puesta en marcha + certificación INVIMA (línea saborizada)</td>
+            <td>Cooperativa + Proveedores</td>
+        </tr>
+        <tr>
+            <td><strong>Lanzamiento Comercial</strong></td>
+            <td>19-24</td>
+            <td>Primeros contratos B2B + suscripciones</td>
+            <td>Cooperativa + Xlerion</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>6. PRESUPUESTO REESTRUCTURADO (A 24 MESES)</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Componente</th>
+            <th>Valor (COP)</th>
+            <th>Fuente de Financiación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Maquinaria y equipos</td>
+            <td>$215.500.000</td>
+            <td>ICR 40% + Alianzas Productivas 30% + Alcaldía 20% + Coop 10%</td>
+        </tr>
+        <tr>
+            <td>Adecuación civil trapiche</td>
+            <td>$45.000.000</td>
+            <td>Regalías (SGR)</td>
+        </tr>
+        <tr>
+            <td>Sistema de trazabilidad digital (Fase 1)</td>
+            <td>$6.500.000</td>
+            <td>Fondo Emprender SENA</td>
+        </tr>
+        <tr>
+            <td>Capital de trabajo inicial</td>
+            <td>$30.000.000</td>
+            <td>Crédito Banco Agrario + aporte cooperativa</td>
+        </tr>
+        <tr>
+            <td>Marketing año 1</td>
+            <td>$24.000.000</td>
+            <td>Recursos propios + cooperación internacional</td>
+        </tr>
+        <tr>
+            <td>Legalización, INVIMA, permisos</td>
+            <td>$12.000.000</td>
+            <td>Alcaldía + Cooperativa</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr style="background:#1a4d2e; color:white; font-weight:bold;">
+            <td>TOTAL</td>
+            <td>$333.000.000</td>
+            <td>Mixta (82% no reembolsable)</td>
+        </tr>
+    </tfoot>
+</table>
+
+<h1 class="page-break">7. INDICADORES DE ÉXITO (KPIs VINCULANTES)</h1>
+
+<div class="kpi-grid">
+    <div class="kpi-item">
+        <strong>+120%</strong>
+        Incremento del ingreso neto por hectárea (no 200% como se prometía originalmente).
+    </div>
+    <div class="kpi-item">
+        <strong>30+</strong>
+        Productores afiliados al programa BEPS en los primeros 12 meses.
+    </div>
+    <div class="kpi-item">
+        <strong>100%</strong>
+        Reutilización del bagazo y reducción del 40% en consumo de leña externa.
+    </div>
+    <div class="kpi-item">
+        <strong>60%</strong>
+        Venta directa de la producción (eliminando intermediarios) al cierre del año 2.
+    </div>
+</div>
+
+<div class="caja-exito">
+    <strong>✓ Jurídico:</strong> Cumplimiento del 100% de requisitos de Supersolidaria, DIAN e INVIMA.
+</div>
+
+<h1>8. RIESGOS Y MITIGACIÓN</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Riesgo</th>
+            <th>Probabilidad</th>
+            <th>Impacto</th>
+            <th>Mitigación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No aprobación en Alianzas Productivas 2026</td>
+            <td>Media</td>
+            <td>Alto</td>
+            <td>Postulación paralela a Fondo Emprender SENA y cooperación japonesa (JICA).</td>
+        </tr>
+        <tr>
+            <td>Caída del precio internacional del azúcar</td>
+            <td>Media</td>
+            <td>Alto</td>
+            <td>Diversificación en línea gourmet y agroturismo (margen superior).</td>
+        </tr>
+        <tr>
+            <td>Incumplimiento de proveedores chinos (CIDCA)</td>
+            <td>Media</td>
+            <td>Alto</td>
+            <td>Contrato con cláusula de garantía bancaria + proveedor nacional de respaldo.</td>
+        </tr>
+        <tr>
+            <td>Desconfianza de productores al modelo BEPS</td>
+            <td>Alta</td>
+            <td>Media</td>
+            <td>Piloto de 6 meses con garantía de devolución + comunicación en lenguaje campesino.</td>
+        </tr>
+        <tr>
+            <td>Cambio de administración municipal 2027</td>
+            <td>Alta</td>
+            <td>Alto</td>
+            <td>Blindaje del proyecto mediante Acuerdo Municipal y registro en Terridata (DNP).</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 class="page-break">9. CONCLUSIÓN EJECUTIVA</h1>
+
+<p>La reestructuración presentada convierte un proyecto <strong>bien intencionado pero técnicamente frágil</strong> en una iniciativa <strong>ejecutable, auditable y escalable</strong> bajo las condiciones reales de Colombia en 2026. Los ajustes críticos son:</p>
+
+<ol>
+    <li><strong>Sustitución del fideicomiso pensional</strong> por el modelo BEPS + Fondo de Solidaridad Cooperativo + Colombia Mayor, que sí opera dentro del marco legal vigente tras la suspensión de la Ley 2381 de 2024.</li>
+    <li><strong>Ajuste de precios</strong> al productor ($5.800/kg en lugar de $6.500) para reflejar el mercado real de octubre 2026.</li>
+    <li><strong>Sustitución de blockchain inicial</strong> por arquitectura centralizada Full-Stack, migrando a blockchain solo en Fase 2 si hay exportación.</li>
+    <li><strong>Cumplimiento obligatorio</strong> de la Circular 94 de 2025 (Buen Gobierno Cooperativo) y Resolución INVIMA 4217/2013.</li>
+    <li><strong>Estructuración financiera en cascada</strong> aprovechando el ICR del 40% vigente en 2026 y la convocatoria de Alianzas Productivas.</li>
+</ol>
+
+<div class="caja-exito">
+    <strong>✓ DOCUMENTO LISTO PARA RADICACIÓN</strong> en la Secretaría de Desarrollo de Nocaima como <strong>Iniciativa de Interés Público</strong>, con alineación explícita al Plan de Desarrollo Municipal 2024-2028 y al Plan Nacional de Desarrollo vigente.
+</div>
+
+<hr>
+
+<!-- FIRMAS -->
+<div class="firma">
+    <p><strong>Documento preparado por:</strong> Xlerion Consultoría y Proyectos</p>
+    <p><strong>Consultor Líder:</strong> Miguel E. Rodriguez Martínez, PMP®</p>
+    <p><strong>Versión:</strong> 2.0 Reestructurada - Octubre 2026</p>
+    <p><strong>Acceso:</strong> Documento público — <a href="https://github.com/xleriontech/Cadena_Panelera">github.com/xleriontech/Cadena_Panelera</a></p>
+    
+    <div class="firma-box">
+        <div class="firma-line">
+            <strong>Miguel Eduardo Rodríguez Martínez</strong><br>
+            Consultor Líder de Proyecto<br>
+            Xlerion Consultoría y Proyectos<br>
+            admin@xlerion.com | +57 320 860 5600<br>
+            www.xlerion.com
+        </div>
+    </div>
+    
+    <div class="firma-box firma-der">
+        <div class="firma-line">
+            <strong>Juliette Katherine González</strong><br>
+            Consultora Asociada<br>
+            Xlerion Consultoría y Proyectos
+        </div>
+    </div>
+    
+    <div style="clear:both; margin-top:40px;">
+        <blockquote>
+            "La semilla del cambio está en el conocimiento y la tradición de los paneleros de Nocaima. Este plan es el abono y el riego técnico para que esa semilla germine en un bosque productivo, justo y sostenible."
+        </blockquote>
+    </div>
+</div>
+
+</section>
+
+</body>
+</html>

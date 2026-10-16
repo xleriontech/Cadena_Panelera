@@ -1,0 +1,35 @@
+# Binarios pesados: GitHub bloquea archivos > 100 MB y el repo debe mantenerse liviano
+*.ai
+*.mp4
+*.mov
+*.avi
+*.pptx
+*.ppt
+*.indd
+*.idml
+*.eps
+*.zip
+*.rar
+*.7z
+
+# Carpetas de trabajo con insumos pesados
+Presentaciones 2026/
+Presentaciones*/
+
+# PDFs pesados puntuales (> 15 MB)
+Nocaima_Acuerdo_004-2024.pdf
+Nocaima_Digital_Roots.pptx
+
+# Código web desactualizado (ver README: alinear con documento v2.0 antes de incluir)
+Web/
+
+# Utilidades temporales
+val_check.py
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.bak
