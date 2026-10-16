@@ -274,18 +274,89 @@
     }
     
     .kpi-item {
-        background: #f5f9f6;
-        border: 1px solid #4a9d6e;
-        padding: 15px;
-        border-radius: 5px;
+        background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4f 100%);
+        border: none;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 3px 10px rgba(26,77,46,0.25);
     }
-    
+
     .kpi-item strong {
         display: block;
-        font-size: 18pt;
-        color: #1a4d2e;
+        font-size: 24pt;
+        color: #ffd97a;
         margin-bottom: 5px;
     }
+
+    /* FIGURAS / INFOGRAFÍAS */
+    .figura { margin: 22px 0; page-break-inside: avoid; }
+    .figura img {
+        width: 100%; height: auto;
+        border-radius: 8px;
+        border: 1px solid #dfe9e1;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .figura figcaption {
+        font-size: 9pt; color: #5a6b5e;
+        margin-top: 8px; text-align: center; font-style: italic;
+    }
+
+    /* GRÁFICOS DE BARRAS (CSS puro, imprimibles) */
+    .chart { margin: 18px 0; page-break-inside: avoid; }
+    .chart-titulo { font-weight: bold; color: #1a4d2e; margin-bottom: 10px; font-size: 11pt; }
+    .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .bar-label { width: 190px; flex-shrink: 0; font-size: 9.5pt; text-align: right; }
+    .bar-track { flex-grow: 1; background: #edf2ee; border-radius: 6px; height: 22px; position: relative; overflow: hidden; }
+    .bar-fill {
+        height: 100%; border-radius: 6px;
+        background: linear-gradient(90deg, #4a9d6e, #2d7a4f);
+        display: flex; align-items: center; justify-content: flex-end;
+        color: white; font-size: 8.5pt; font-weight: bold;
+        padding-right: 8px; min-width: 44px;
+    }
+    .bar-fill.rojo { background: linear-gradient(90deg, #e07a5f, #c0392b); }
+    .bar-fill.dorado { background: linear-gradient(90deg, #e6b800, #b8860b); }
+    .bar-fill.azul { background: linear-gradient(90deg, #5dade2, #2471a3); }
+    .bar-range { position: absolute; top: 0; bottom: 0; background: rgba(192,57,43,0.55); border-radius: 4px; }
+    .chart-nota { font-size: 9pt; color: #666; margin-top: 6px; font-style: italic; }
+
+    /* TARJETAS COMPARATIVAS (balance tradicional vs cooperativo) */
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .vs-card { border-radius: 10px; padding: 18px; page-break-inside: avoid; }
+    .vs-card.malo { background: #fdf0ef; border: 2px solid #e07a5f; }
+    .vs-card.bueno { background: linear-gradient(135deg, #e8f5e9, #d4edda); border: 2px solid #27ae60; }
+    .vs-card h4 { margin: 0 0 10px 0; font-size: 12pt; font-style: normal; }
+    .vs-card.malo h4 { color: #c0392b; }
+    .vs-card.bueno h4 { color: #1a4d2e; }
+    .vs-num { font-size: 17pt; font-weight: bold; display: block; margin: 4px 0; }
+    .vs-card.malo .vs-num { color: #c0392b; }
+    .vs-card.bueno .vs-num { color: #1a4d2e; }
+
+    /* LÍNEA DE TIEMPO (hoja de ruta) */
+    .timeline { display: flex; gap: 0; margin: 20px 0; page-break-inside: avoid; }
+    .t-fase {
+        flex: 1; text-align: center; padding: 12px 6px;
+        background: #f5f9f6; border-top: 4px solid #4a9d6e;
+        border-bottom: 1px solid #d0d0d0; font-size: 8.5pt;
+        position: relative;
+    }
+    .t-fase:first-child { border-left: 1px solid #d0d0d0; border-radius: 8px 0 0 8px; }
+    .t-fase:last-child { border-right: 1px solid #d0d0d0; border-radius: 0 8px 8px 0; }
+    .t-fase strong { display: block; color: #1a4d2e; font-size: 9pt; }
+    .t-mes {
+        display: inline-block; background: #1a4d2e; color: white;
+        border-radius: 10px; padding: 1px 8px; font-size: 8pt; margin-top: 5px;
+    }
+
+    /* BALANCE FINANCIERO */
+    .balance {
+        background: linear-gradient(135deg, #1a4d2e, #2d7a4f);
+        color: white; border-radius: 10px; padding: 20px;
+        margin: 20px 0; page-break-inside: avoid;
+    }
+    .balance strong { color: #ffd97a; }
+    .balance-num { font-size: 22pt; font-weight: bold; color: white; }
     
     /* BOTÓN DESCARGA */
     .no-print {
@@ -316,6 +387,12 @@
         .portada h1 { font-size: 22pt; }
         .portada h2 { font-size: 12pt; }
         .kpi-grid { grid-template-columns: 1fr; }
+        .vs-grid { grid-template-columns: 1fr; }
+        .bar-label { width: 120px; font-size: 8.5pt; }
+        .timeline { flex-direction: column; }
+        .t-fase { border-left: 4px solid #4a9d6e; border-top: 1px solid #d0d0d0; border-radius: 0 8px 8px 0; text-align: left; padding-left: 14px; }
+        .t-fase:first-child { border-radius: 8px 8px 0 0; }
+        .t-fase:last-child { border-radius: 0 0 8px 8px; }
         table { font-size: 9pt; display: block; overflow-x: auto; }
         .firma-box { display: block; min-width: 0; }
         .firma-der { float: none; }
@@ -325,6 +402,8 @@
         .no-print { display: none; }
         body { background: white; }
         .portada { height: auto; min-height: 100vh; }
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .figura img { box-shadow: none; }
     }
 </style>
 </head>
@@ -400,6 +479,36 @@
     <li><strong>Precio consumidor final Bogotá:</strong> $7.000 - $9.000 COP/kg.</li>
 </ul>
 
+<div class="chart">
+    <div class="chart-titulo">📊 Cadena de precios por kg (COP, escala 0 – 9.000)</div>
+    <div class="bar-row">
+        <div class="bar-label">Productor tradicional</div>
+        <div class="bar-track"><div class="bar-range" style="left:36.7%; width:10%;"></div></div>
+        <div class="bar-label" style="text-align:left; width:150px;">$3.300 – $4.200</div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Costo de producción</div>
+        <div class="bar-track"><div class="bar-fill azul" style="width:46.7%;">$4.200</div></div>
+        <div class="bar-label" style="text-align:left; width:150px;"></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Mayorista Bogotá</div>
+        <div class="bar-track"><div class="bar-fill dorado" style="width:49.3%;">$4.436</div></div>
+        <div class="bar-label" style="text-align:left; width:150px;"></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label"><strong>Cooperativa ($5.800)</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:64.4%;">$5.800 ✓</div></div>
+        <div class="bar-label" style="text-align:left; width:150px;"></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Consumidor final</div>
+        <div class="bar-track"><div class="bar-range" style="left:77.8%; width:22.2%;"></div></div>
+        <div class="bar-label" style="text-align:left; width:150px;">$7.000 – $9.000</div>
+    </div>
+    <div class="chart-nota">El productor tradicional vende por debajo de su costo ($4.200). La cooperativa ($5.800) solo es viable con venta directa y marca propia.</div>
+</div>
+
 <div class="caja-critico">
     <strong>⚠️ DIAGNÓSTICO CRÍTICO:</strong> El supuesto original de pagar $6.500/kg al productor es <strong>irreal en mercado mayorista tradicional</strong>; solo es viable mediante venta directa al consumidor final con marca propia y valor agregado.
 </div>
@@ -459,6 +568,11 @@
 </table>
 
 <h1 class="page-break">2. REESTRUCTURACIÓN DE LOS 5 PILARES</h1>
+
+<figure class="figura">
+    <img src="innovacion-industria-panelera.png" alt="Infografía: el desafío del modelo tradicional frente a la solución integral propuesta">
+    <figcaption>Visión general: del modelo tradicional intermediado al modelo cooperativo tecnificado. Nota: las cifras de esta infografía corresponden a una versión previa del proyecto; rigen los valores de las tablas del presente documento ($5.800/kg al productor; protección vía BEPS + Fondo de Solidaridad + Colombia Mayor).</figcaption>
+</figure>
 
 <h2>2.1. PILAR 1: AUTOMATIZACIÓN DEL TRAPICHE</h2>
 
@@ -589,6 +703,51 @@
 <p><strong>Margen promedio ponderado:</strong> 38% sobre costo de producción.<br>
 <strong>Ingresos netos por hectárea proyectados:</strong> De $2.500.000 a $5.800.000 COP/año (duplicar x2.3, no triplicar).</p>
 
+<div class="vs-grid">
+    <div class="vs-card malo">
+        <h4>⚠️ Modelo tradicional</h4>
+        <span class="vs-num">$2.5 M</span> ingreso neto / ha / año
+        <span class="vs-num">&lt;45%</span> del valor final para el productor
+        <span class="vs-num">0</span> protección social (informalidad)
+    </div>
+    <div class="vs-card bueno">
+        <h4>✓ Modelo cooperativo</h4>
+        <span class="vs-num">$5.8 M</span> ingreso neto / ha / año
+        <span class="vs-num">60%</span> venta directa al año 2
+        <span class="vs-num">3 capas</span> de protección (BEPS + Fondo + Colombia Mayor)
+    </div>
+</div>
+
+<div class="chart">
+    <div class="chart-titulo">📊 Margen bruto por línea de producto</div>
+    <div class="bar-row">
+        <div class="bar-label">Tradicional</div>
+        <div class="bar-track"><div class="bar-fill" style="width:28%;">28%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Gourmet</div>
+        <div class="bar-track"><div class="bar-fill" style="width:45%;">45%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Saborizada</div>
+        <div class="bar-track"><div class="bar-fill" style="width:52%;">52%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Miel Virgen</div>
+        <div class="bar-track"><div class="bar-fill" style="width:48%;">48%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Suscripción</div>
+        <div class="bar-track"><div class="bar-fill" style="width:42%;">42%</div></div>
+    </div>
+    <div class="chart-nota">Promedio ponderado: 38%. La línea saborizada exige registro INVIMA.</div>
+</div>
+
+<figure class="figura">
+    <img src="revitalizacion-panelera-nocaima.png" alt="Infografía: transformación digital y productiva, comparativa económica y sostenibilidad social">
+    <figcaption>Comparativa del impacto económico y los pilares sociales del proyecto. Nota: infografía de una versión previa; rigen los valores del presente documento ($5.800/kg; aporte BEPS 4% + Fondo 2%; blockchain solo en Fase 2).</figcaption>
+</figure>
+
 <h2>2.3. PILAR 3: TRAZABILIDAD DIGITAL</h2>
 
 <div class="caja-alerta">
@@ -611,6 +770,11 @@
     <li>Cumplimiento del Reglamento UE 2023/1115 (Deforestación).</li>
     <li>Costo migración: $35.000.000 (financiable con cooperación internacional).</li>
 </ul>
+
+<figure class="figura">
+    <img src="transformacion-digital-cadena-panelera.png" alt="Diagrama: arquitectura de trazabilidad con sensores IoT desde el corte hasta el empaque">
+    <figcaption>Arquitectura de trazabilidad: captura IoT (MQTT) desde el corte hasta el empaque. Nota: el registro en blockchain corresponde a la Fase 2; en Fase 1 opera el sistema centralizado ($6.5 M).</figcaption>
+</figure>
 
 <h2 class="page-break">2.4. PILAR 4: PROTECCIÓN SOCIAL RURAL</h2>
 
@@ -752,6 +916,16 @@
 
 <h1 class="page-break">5. HOJA DE RUTA REESTRUCTURADA (24 MESES)</h1>
 
+<div class="timeline">
+    <div class="t-fase"><strong>Constitución</strong><span class="t-mes">Mes 1-4</span></div>
+    <div class="t-fase"><strong>POAI 2027</strong><span class="t-mes">Mes 2-3</span></div>
+    <div class="t-fase"><strong>BEPS</strong><span class="t-mes">Mes 4-5</span></div>
+    <div class="t-fase"><strong>Alianzas</strong><span class="t-mes">Mes 5-8</span></div>
+    <div class="t-fase"><strong>ICR + Crédito</strong><span class="t-mes">Mes 8-10</span></div>
+    <div class="t-fase"><strong>Trapiche</strong><span class="t-mes">Mes 12-18</span></div>
+    <div class="t-fase"><strong>Lanzamiento</strong><span class="t-mes">Mes 19-24</span></div>
+</div>
+
 <table>
     <thead>
         <tr>
@@ -857,6 +1031,51 @@
         </tr>
     </tfoot>
 </table>
+
+<div class="balance">
+    <div class="chart-titulo" style="color:#ffd97a;">💰 Balance de inversión a 24 meses</div>
+    <span class="balance-num">$333.000.000</span><br>
+    Inversión total · <strong>82% no reembolsable</strong> · Aporte cooperativa solo 10% de maquinaria
+</div>
+
+<div class="chart">
+    <div class="chart-titulo">📊 Distribución del presupuesto por componente</div>
+    <div class="bar-row">
+        <div class="bar-label">Maquinaria $215.5 M</div>
+        <div class="bar-track"><div class="bar-fill" style="width:64.7%;">64.7%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Adecuación civil $45 M</div>
+        <div class="bar-track"><div class="bar-fill azul" style="width:13.5%;">13.5%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Capital trabajo $30 M</div>
+        <div class="bar-track"><div class="bar-fill dorado" style="width:9%;">9%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Marketing $24 M</div>
+        <div class="bar-track"><div class="bar-fill dorado" style="width:7.2%;">7.2%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Legal/INVIMA $12 M</div>
+        <div class="bar-track"><div class="bar-fill" style="width:3.6%;">3.6%</div></div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Trazabilidad $6.5 M</div>
+        <div class="bar-track"><div class="bar-fill" style="width:2%;">2%</div></div>
+    </div>
+</div>
+
+<div class="chart">
+    <div class="chart-titulo">📊 Financiación en cascada — maquinaria ($215.5 M)</div>
+    <div style="display:flex; height:34px; border-radius:8px; overflow:hidden; font-size:9pt; font-weight:bold; color:white; text-align:center;">
+        <div style="width:40%; background:#27ae60; display:flex; align-items:center; justify-content:center;">ICR 40%</div>
+        <div style="width:30%; background:#2471a3; display:flex; align-items:center; justify-content:center;">Alianzas 30%</div>
+        <div style="width:20%; background:#b8860b; display:flex; align-items:center; justify-content:center;">Alcaldía 20%</div>
+        <div style="width:10%; background:#5d6d7e; display:flex; align-items:center; justify-content:center;">Coop</div>
+    </div>
+    <div class="chart-nota">ICR $86.2 M + Alianzas $64.65 M + Alcaldía $43.1 M + Cooperativa $21.55 M.</div>
+</div>
 
 <h1 class="page-break">7. INDICADORES DE ÉXITO (KPIs VINCULANTES)</h1>
 
