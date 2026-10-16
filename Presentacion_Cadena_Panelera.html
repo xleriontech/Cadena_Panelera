@@ -59,22 +59,31 @@
         opacity: 0.3;
     }
     
-    .portada-content { position: relative; z-index: 2; }
-    
+    .portada-content {
+        position: relative; z-index: 2;
+        background: rgba(10, 30, 18, 0.45);
+        padding: 40px 30px;
+        border-radius: 12px;
+        max-width: 800px;
+    }
+
     .portada h1 {
+        color: #ffffff;
         font-size: 30pt;
         font-weight: bold;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
         letter-spacing: 1px;
     }
-    
+
     .portada h2 {
+        color: #f0f7f2;
         font-size: 15pt;
         font-weight: normal;
         margin-bottom: 40px;
         font-style: italic;
         opacity: 0.95;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
     
     .portada .subtitulo {
@@ -90,7 +99,11 @@
         margin-top: 60px;
         font-size: 11pt;
         line-height: 1.8;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
+
+    .portada .info strong,
+    .portada .subtitulo strong { color: #ffd97a; }
     
     /* Badge retirado: documento público en GitHub */
     
@@ -207,22 +220,45 @@
         margin: 25px 0;
     }
     
-    /* TABLA DE CONTENIDO */
-    .toc { page-break-after: always; }
-    
-    .toc h1 { text-align: center; border: none; }
-    
-    .toc ul { list-style: none; margin: 20px 0; padding: 0; }
-    
-    .toc li {
-        padding: 8px 0;
-        border-bottom: 1px dotted #ccc;
-        font-size: 11pt;
+    /* TABLA DE CONTENIDO MODERNA */
+    .toc {
+        page-break-after: always;
+        background: #f5f9f6;
+        border-radius: 12px;
+        padding: 30px;
     }
-    
-    .toc ul ul { margin-left: 25px; margin-top: 5px; }
-    
-    .toc ul ul li { font-size: 10pt; border-bottom: 1px dotted #e0e0e0; }
+
+    .toc h1 { text-align: center; border: none; margin-top: 0; }
+
+    .toc-sub { text-align: center; color: #5a6b5e; margin-bottom: 20px; font-size: 10.5pt; }
+
+    .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .toc-card {
+        display: flex; gap: 12px;
+        background: white;
+        border: 1px solid #dfe9e1;
+        border-left: 5px solid #4a9d6e;
+        border-radius: 8px;
+        padding: 12px 14px;
+    }
+
+    .toc-num {
+        flex-shrink: 0;
+        width: 34px; height: 34px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1a4d2e, #4a9d6e);
+        color: white; font-weight: bold;
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    .toc-card strong { display: block; color: #1a4d2e; font-size: 10.5pt; }
+
+    .toc-tag { font-size: 9pt; color: #5a6b5e; }
+
+    .toc-card ul { list-style: none; margin: 6px 0 0 0; padding: 0; }
+
+    .toc-card ul li { font-size: 9pt; color: #333; padding: 2px 0; margin: 0; }
     
     /* FIRMAS */
     .firma {
@@ -313,6 +349,7 @@
         background: linear-gradient(90deg, #4a9d6e, #2d7a4f);
         display: flex; align-items: center; justify-content: flex-end;
         color: white; font-size: 8.5pt; font-weight: bold;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.55);
         padding-right: 8px; min-width: 44px;
     }
     .bar-fill.rojo { background: linear-gradient(90deg, #e07a5f, #c0392b); }
@@ -387,6 +424,8 @@
         .portada h1 { font-size: 22pt; }
         .portada h2 { font-size: 12pt; }
         .kpi-grid { grid-template-columns: 1fr; }
+        .toc-grid { grid-template-columns: 1fr; }
+        .toc { padding: 18px; }
         .vs-grid { grid-template-columns: 1fr; }
         .bar-label { width: 120px; font-size: 8.5pt; }
         .timeline { flex-direction: column; }
@@ -439,25 +478,47 @@
 <!-- TABLA DE CONTENIDO -->
 <section class="toc">
     <h1>ÍNDICE DE CONTENIDO</h1>
-    <ul>
-        <li><strong>1. Análisis de Contexto 2026 (Línea Base)</strong></li>
-        <li>1.1. Coyuntura Macroeconómica</li>
-        <li>1.2. Realidad del Mercado Panelero</li>
-        <li>1.3. Marco Normativo Crítico Vigente</li>
-        <li><strong>2. Reestructuración de los 5 Pilares</strong></li>
-        <li>2.1. Pilar 1: Automatización del Trapiche</li>
-        <li>2.2. Pilar 2: Comercialización Directa</li>
-        <li>2.3. Pilar 3: Trazabilidad Digital</li>
-        <li>2.4. Pilar 4: Protección Social Rural</li>
-        <li>2.5. Pilar 5: Marketing Ético-Legal</li>
-        <li><strong>3. Estructura Jurídica Propuesta</strong></li>
-        <li><strong>4. Gobernanza y Cumplimiento Ambiental</strong></li>
-        <li><strong>5. Hoja de Ruta Reestructurada (24 Meses)</strong></li>
-        <li><strong>6. Presupuesto Reestructurado</strong></li>
-        <li><strong>7. Indicadores de Éxito (KPIs)</strong></li>
-        <li><strong>8. Riesgos y Mitigación</strong></li>
-        <li><strong>9. Conclusión Ejecutiva</strong></li>
-    </ul>
+    <p class="toc-sub">Documento Ejecutivo 2026 · 9 capítulos · Hoja de ruta a 24 meses</p>
+    <div class="toc-grid">
+        <div class="toc-card">
+            <span class="toc-num">1</span>
+            <div><strong>Análisis de Contexto 2026</strong><span class="toc-tag">Línea Base</span>
+            <ul><li>1.1 · Coyuntura Macroeconómica</li><li>1.2 · Realidad del Mercado Panelero</li><li>1.3 · Marco Normativo Crítico</li></ul></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">2</span>
+            <div><strong>Los 5 Pilares</strong><span class="toc-tag">Reestructuración</span>
+            <ul><li>2.1 · Automatización del Trapiche</li><li>2.2 · Comercialización Directa</li><li>2.3 · Trazabilidad Digital</li><li>2.4 · Protección Social Rural</li><li>2.5 · Marketing Ético-Legal</li></ul></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">3</span>
+            <div><strong>Estructura Jurídica</strong><span class="toc-tag">Cooperativa multiactiva · CIIU 1072</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">4</span>
+            <div><strong>Gobernanza Ambiental</strong><span class="toc-tag">CAR · Vertimientos · Emisiones</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">5</span>
+            <div><strong>Hoja de Ruta</strong><span class="toc-tag">24 meses · 7 fases</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">6</span>
+            <div><strong>Presupuesto</strong><span class="toc-tag">$333 M · 82% no reembolsable</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">7</span>
+            <div><strong>Indicadores de Éxito</strong><span class="toc-tag">KPIs vinculantes</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">8</span>
+            <div><strong>Riesgos y Mitigación</strong><span class="toc-tag">Matriz de riesgos</span></div>
+        </div>
+        <div class="toc-card">
+            <span class="toc-num">9</span>
+            <div><strong>Conclusión Ejecutiva</strong><span class="toc-tag">Lista para radicación</span></div>
+        </div>
+    </div>
 </section>
 
 <!-- CONTENIDO PRINCIPAL -->
