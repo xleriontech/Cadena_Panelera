@@ -40,6 +40,7 @@
     .portada {
         page-break-after: always;
         height: 100vh;
+        min-height: 100svh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -69,11 +70,12 @@
 
     .portada h1 {
         color: #ffffff;
-        font-size: 30pt;
+        font-size: clamp(20pt, 6vw, 30pt);
         font-weight: bold;
         margin-bottom: 20px;
         text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
         letter-spacing: 1px;
+        overflow-wrap: break-word;
     }
 
     .portada h2 {
@@ -417,22 +419,44 @@
     
     .btn-descargar:hover { background: #2d7a4f; }
     
-    /* RESPONSIVE (GitHub Pages / móvil) */
-    @media (max-width: 700px) {
+    /* RESPONSIVE TABLET (pantalla ≤1024px; no afecta impresión) */
+    @media screen and (max-width: 1024px) {
+        .portada { padding: 40px 20px; }
+        .portada-content { max-width: 94%; }
+        .timeline {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+        }
+        .t-fase { flex: 0 0 170px; scroll-snap-align: start; }
+        .t-fase:first-child { border-radius: 8px 0 0 8px; }
+        .t-fase:last-child { border-radius: 0 8px 8px 0; }
+        table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        thead, tbody, tfoot { display: table; width: 100%; min-width: 640px; }
+    }
+
+    /* RESPONSIVE MÓVIL (pantalla ≤700px; no afecta impresión) */
+    @media screen and (max-width: 700px) {
         body { font-size: 10.5pt; }
-        .portada { padding: 1.2cm 0.8cm; height: auto; min-height: 100vh; }
-        .portada h1 { font-size: 22pt; }
+        .portada { padding: 48px 14px; height: auto; min-height: 100svh; }
+        .portada-content { padding: 28px 16px; max-width: 100%; }
         .portada h2 { font-size: 12pt; }
+        .portada .subtitulo { font-size: 10.5pt; padding: 12px 14px; max-width: 100%; }
+        .portada .info { margin-top: 32px; font-size: 10pt; }
         .kpi-grid { grid-template-columns: 1fr; }
+        .kpi-item strong { font-size: 20pt; }
         .toc-grid { grid-template-columns: 1fr; }
         .toc { padding: 18px; }
         .vs-grid { grid-template-columns: 1fr; }
-        .bar-label { width: 120px; font-size: 8.5pt; }
-        .timeline { flex-direction: column; }
-        .t-fase { border-left: 4px solid #4a9d6e; border-top: 1px solid #d0d0d0; border-radius: 0 8px 8px 0; text-align: left; padding-left: 14px; }
-        .t-fase:first-child { border-radius: 8px 8px 0 0; }
-        .t-fase:last-child { border-radius: 0 0 8px 8px; }
-        table { font-size: 9pt; display: block; overflow-x: auto; }
+        .vs-num { font-size: 15pt; }
+        .bar-row { flex-wrap: wrap; gap: 4px 10px; }
+        .bar-label:first-child { width: 100%; text-align: left; font-weight: bold; }
+        .bar-track { flex: 1 1 60%; height: 24px; }
+        .cascade { font-size: 8pt; }
+        .balance-num { font-size: 18pt; }
+        .btn-descargar { padding: 14px 24px; width: 100%; max-width: 340px; }
+        table { font-size: 9pt; }
         .firma-box { display: block; min-width: 0; }
         .firma-der { float: none; }
     }
@@ -1129,7 +1153,7 @@
 
 <div class="chart">
     <div class="chart-titulo">📊 Financiación en cascada — maquinaria ($215.5 M)</div>
-    <div style="display:flex; height:34px; border-radius:8px; overflow:hidden; font-size:9pt; font-weight:bold; color:white; text-align:center;">
+    <div class="cascade" style="display:flex; height:34px; border-radius:8px; overflow:hidden; font-size:9pt; font-weight:bold; color:white; text-align:center;">
         <div style="width:40%; background:#27ae60; display:flex; align-items:center; justify-content:center;">ICR 40%</div>
         <div style="width:30%; background:#2471a3; display:flex; align-items:center; justify-content:center;">Alianzas 30%</div>
         <div style="width:20%; background:#b8860b; display:flex; align-items:center; justify-content:center;">Alcaldía 20%</div>
